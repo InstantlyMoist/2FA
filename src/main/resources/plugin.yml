@@ -1,0 +1,9 @@
+name: 2FASpigot
+description: Enter a code from your device to use this plugin
+version: 0.1
+main: me.kyllian.TFA.TFAPlugin
+
+commands:
+  2FA:
+    usage: /<command>
+    description: Base command of the plugin
