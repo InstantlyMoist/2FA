@@ -47,6 +47,7 @@ public class TFAPlugin extends JavaPlugin {
 
     public void initializeListeners() {
         new PlayerChatListener(this);
+        new PlayerCommandPreprocessListener(this);
         new PlayerDropItemListener(this);
         new PlayerHeldItemListener(this);
         new PlayerInteractListener(this);

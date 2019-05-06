@@ -86,4 +86,8 @@ public class MessageHandler {
     public List<String> getHelpMessages() {
         return fileConfiguration.getStringList("Help");
     }
+
+    public String getEnterCodeChatMessage() {
+        return colorTranslate(fileConfiguration.getString("EnterCodeChat"));
+    }
 }

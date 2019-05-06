@@ -3,6 +3,7 @@ Canceled: '&8&o2FA: &7The setup has been canceled!'
 CodeRemoved: '&8&o2FA: &7The code has been removed!'
 Correct: '&8&o2FA: &7You are verified!'
 EnterCode: 'Please enter%nthe code from%nyour device to%nverify!'
+EnterCodeChat: '&8&o2FA: &7Please enter a code from your device to verify'
 Help:
   - '&8&o2FA: &7Setup instructions:'
   - '&7Use /2FA setup to start the procedure'

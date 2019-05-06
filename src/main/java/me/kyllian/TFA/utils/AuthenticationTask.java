@@ -20,6 +20,8 @@ public class AuthenticationTask {
         setItemInHand(plugin.getPlayerHandler().getItemInHand(player));
 
         plugin.getMapHandler().sendMap(player, plugin.getMessageHandler().getEnterCodeMessage());
+
+        player.sendMessage(plugin.getMessageHandler().getEnterCodeChatMessage());
     }
 
     public void succes() {

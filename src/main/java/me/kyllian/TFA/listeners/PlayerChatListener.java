@@ -25,7 +25,7 @@ public class PlayerChatListener implements Listener {
         if (playerData.getAuthenticationTask() == null) {
             if (playerData.isSetup()) {
                 event.setCancelled(true);
-                if (plugin.getGoogleAuthenticator().authorize(plugin.getGoogleAuthenticator().getCredentialRepository().getSecretKey(player.getUniqueId().toString()), Integer.parseInt(event.getMessage()))) {
+                if (plugin.getGoogleAuthenticator().authorize(plugin.getGoogleAuthenticator().getCredentialRepository().getSecretKey(player.getUniqueId().toString()), getInt(event.getMessage()))) {
                     playerData.setupComplete();
                     return;
                 }
@@ -34,13 +34,22 @@ public class PlayerChatListener implements Listener {
             }
         } else {
             event.setCancelled(true);
-            if (plugin.getGoogleAuthenticator().authorize(plugin.getGoogleAuthenticator().getCredentialRepository().getSecretKey(player.getUniqueId().toString()), Integer.parseInt(event.getMessage()))) {
+            if (plugin.getGoogleAuthenticator().authorize(plugin.getGoogleAuthenticator().getCredentialRepository().getSecretKey(player.getUniqueId().toString()), getInt(event.getMessage()))) {
                 playerData.getAuthenticationTask().succes();
                 return;
             } else {
                 player.sendMessage(plugin.getMessageHandler().getIncorrectMessage());
                 return;
             }
+        }
+    }
+
+
+    public int getInt(String string) {
+        try {
+            return Integer.parseInt(string);
+        } catch (NumberFormatException exception) {
+            return 0;
         }
     }
 }

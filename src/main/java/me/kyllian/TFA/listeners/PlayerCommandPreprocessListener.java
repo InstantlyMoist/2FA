@@ -7,24 +7,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 
-public class PlayerMoveListener implements Listener {
+public class PlayerCommandPreprocessListener implements Listener {
 
     private TFAPlugin plugin;
 
-    public PlayerMoveListener(TFAPlugin plugin) {
+    public PlayerCommandPreprocessListener(TFAPlugin plugin) {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
-    public void onPlayerMove(PlayerMoveEvent event) {
+    public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
         PlayerData playerData = plugin.getPlayerHandler().getPlayerData(player);
-        if (playerData.getAuthenticationTask() != null || playerData.isSetup() && (event.getTo().getX() != event.getFrom().getX() || event.getTo().getZ() != event.getFrom().getZ() || event.getFrom().getY() != event.getTo().getY())) {
-            player.setVelocity(player.getVelocity().zero());
-            player.teleport(event.getFrom());
-        }
+        if (playerData.getAuthenticationTask() != null || playerData.isSetup()) event.setCancelled(true);
     }
 }
