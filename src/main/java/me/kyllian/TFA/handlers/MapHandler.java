@@ -44,7 +44,7 @@ public class MapHandler {
                 mapCanvas.drawImage(0, 0, image);
             }
         });
-        if (Bukkit.getVersion().contains("1.13")) {
+        if (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14")) {
             MapMeta meta = (MapMeta) map.getItemMeta();
             meta.setMapId(getMapID(mapView));
             map.setItemMeta(meta);

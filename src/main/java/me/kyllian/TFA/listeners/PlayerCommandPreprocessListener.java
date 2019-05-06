@@ -21,6 +21,6 @@ public class PlayerCommandPreprocessListener implements Listener {
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
         PlayerData playerData = plugin.getPlayerHandler().getPlayerData(player);
-        if (playerData.getAuthenticationTask() != null || playerData.isSetup()) event.setCancelled(true);
+        if (playerData.getAuthenticationTask() != null || playerData.isSetup() && !event.getMessage().startsWith("/2fa")) event.setCancelled(true);
     }
 }
