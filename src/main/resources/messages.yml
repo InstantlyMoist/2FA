@@ -11,6 +11,7 @@ Help:
   - '&7To finish up the proces enter a code from your device!'
 Incorrect: '&8&o2FA: &7The code you specified is incorrect!'
 Info: '&8&o2FA: &7Did you know you could use 2FA to secure your account? Do /2fa for more information!'
+Kick: '&8&o2FA\n&7You took too long to\n&7complete the authentication task!\n\n&7Please try again!'
 NoCode: '&8&o2FA: &7You don''t have 2FA set up yet!'
 NoPermission: '&8&o2FA: &7You must have the permission %permission% in order to execute this command'
 NotAPlayer: '&8&o2FA: &7You must be a player in order to execute this command!'

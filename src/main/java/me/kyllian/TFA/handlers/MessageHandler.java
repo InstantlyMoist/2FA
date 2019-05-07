@@ -90,4 +90,8 @@ public class MessageHandler {
     public String getEnterCodeChatMessage() {
         return colorTranslate(fileConfiguration.getString("EnterCodeChat"));
     }
+
+    public String getKickMessage() {
+        return colorTranslate(fileConfiguration.getString("Kick").replace("\\n","\n"));
+    }
 }
