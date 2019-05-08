@@ -18,9 +18,7 @@ public class KeyHandler implements ICredentialRepository {
     @Override
     public String getSecretKey(String s) {
         String key = plugin.getPlayerHandler().getFileConfiguration().getString(s + ".code");
-        if (key == null) return null;
-        String decoded = new String(Base64.getDecoder().decode(key));
-        return decoded;
+        return key == null ? null : new String(Base64.getDecoder().decode(key));
 }
 
     @Override

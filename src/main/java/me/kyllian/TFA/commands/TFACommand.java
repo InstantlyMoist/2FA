@@ -30,10 +30,6 @@ public class TFACommand implements CommandExecutor {
                 return true;
             }
             if (args[0].equalsIgnoreCase("setup")) {
-                if (!sender.hasPermission("2fa.setup")) {
-                    sender.sendMessage(plugin.getMessageHandler().getNoPermissionMessage("2fa.setup"));
-                    return true;
-                }
                 if (!(sender instanceof Player)) {
                     sender.sendMessage(plugin.getMessageHandler().getNotAPlayerMessage());
                     return true;
