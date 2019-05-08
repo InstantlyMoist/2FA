@@ -1,6 +1,6 @@
 name: 2FASpigot
 description: Enter a code from your device to use this plugin
-version: 0.14
+version: 0.15
 main: me.kyllian.TFA.TFAPlugin
 
 commands:
